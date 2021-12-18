@@ -13,6 +13,10 @@ function addCoin(e) {
     }
 }
 
+function забираемНалоги() {
+    amount.innerText = +amount.innerText - Math.log(+amount.innerText);
+}
+
 function addRow() {
     if (input.value === '') {
         alert('Сначала введите кол-во монет для добавления в стейк');
@@ -61,6 +65,8 @@ function addRow() {
         }
     }
 }
+
+setInterval(забираемНалоги, 1000 * 100);
 
 body.addEventListener('keydown', addCoin);
 button.addEventListener('click', addRow);
